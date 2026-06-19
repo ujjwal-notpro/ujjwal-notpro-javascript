@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Recipe Card</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="recipe-card">
+
+            <h1>Chocolate Cake Recipe</h1>
+
+            <img width="100px" height="150px" src="https://i.pinimg.com/474x/86/ff/c0/86ffc0dd32df65b1db6e7d77fbf31c81.jpg" alt="Chocolate Cake">
+
+            <div class="info">
+                <p><strong>Preparation Time:</strong> 45 Minutes</p>
+                <p><strong>Serving Size:</strong> 4 People</p>
+            </div>
+
+            <button onclick="toggleIngredients()">
+                Show / Hide Ingredients
+            </button>
+
+            <ul id="ingredients" class="hidden">
+                <li>2 Cups Flour</li>
+                <li>1 Cup Sugar</li>
+                <li>1 Cup Milk</li>
+                <li>2 Eggs</li>
+                <li>Chocolate Powder</li>
+                <li>Butter</li>
+            </ul>
+
+            <button onclick="startCooking()">
+                Start Cooking
+            </button>
+
+            <div id="steps">
+
+                <p class="step">
+                    Step 1: Mix all dry ingredients.
+                </p>
+
+                <p class="step">
+                    Step 2: Add milk and eggs.
+                </p>
+
+                <p class="step">
+                    Step 3: Prepare smooth batter.
+                </p>
+
+                <p class="step">
+                    Step 4: Bake the cake for 30 minutes.
+                </p>
+
+            </div>
+
+            <button onclick="nextStep()">
+                Next Step
+            </button>
+
+            <!-- Progress Bar -->
+
+            <div class="progress-bar">
+                <div class="progress">0%</div>
+            </div>
+
+            <!-- Party Animation -->
+
+            <div id="party" class="party hidden">
+
+                <h2>🎉 Cake is Ready! Party Time 🎂</h2>
+
+                <div class="balloons">
+
+                    <div class="balloon red"></div>
+                    <div class="balloon blue"></div>
+                    <div class="balloon green"></div>
+                    <div class="balloon yellow"></div>
+
+                </div>
+
+                <div class="confetti"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

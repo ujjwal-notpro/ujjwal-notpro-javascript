@@ -1,0 +1,65 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini Amazon</title>
+  <link rel="stylesheet" href="style3.css"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">Mini Amazon</div>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search products...">
+    </div>
+
+    <div class="cart-icon">
+      🛒 Cart (<span id="cartCount">0</span>)
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Mini Amazon</h1>
+    <p>Best Deals | Trending Products | Fast Delivery</p>
+  </section>
+
+  <!-- Product Grid -->
+  <section class="products" id="productContainer">
+  </section>
+
+  <!-- Product Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+
+      <span class="close-btn" id="closeBtn">&times;</span>
+
+      <img id="popupImage" src="" alt="">
+
+      <h2 id="popupTitle"></h2>
+
+      <p id="popupPrice"></p>
+
+      <p id="popupDesc"></p>
+
+      <button id="addToCartBtn">Add to Cart</button>
+
+    </div>
+  </div>
+
+  <!-- Cart Section -->
+  <section class="cart-section">
+    <h2>Your Cart</h2>
+
+    <div id="cartItems"></div>
+
+    <h3 id="totalPrice">Total: ₹0</h3>
+  </section>
+
+  <script src="script2.js"></script>
+</body>
+</html>

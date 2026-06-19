@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    min-height: 100vh;
+    padding: 40px;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.subtitle{
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.internship-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card{
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: 0.4s;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.badge{
+    display: inline-block;
+    background: #e8f5ff;
+    color: #007bff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.card h2{
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card ul{
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.card ul li{
+    padding: 8px 0;
+    color: #555;
+    border-bottom: 1px solid #eee;
+}
+
+.btn{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    background: #0056b3;
+}

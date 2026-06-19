@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+
+  <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>🌤 Weather App</h1>
+
+    <input type="text" id="city" placeholder="Enter city name">
+
+    <button id="btn">Get Weather</button>
+
+    <div class="weather-card" id="weatherCard">
+
+      <h2 id="cityName"></h2>
+
+      <p id="temperature"></p>
+
+      <p id="humidity"></p>
+
+      <p id="condition"></p>
+
+    </div>
+
+    <p class="error" id="error"></p>
+
+  </div>
+
+  <script>
+
+    const button = document.getElementById("btn");
+
+    button.addEventListener("click", getWeather);
+
+    async function getWeather(){
+
+      const city = document.getElementById("city").value;
+
+      const apiKey = "f5572e8eeaf8bf7b787e408d745d891e";
+
+      const url =
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+      const weatherCard = document.getElementById("weatherCard");
+
+      const error = document.getElementById("error");
+
+      weatherCard.style.display = "none";
+
+      error.innerHTML = "";
+
+      if(city === ""){
+
+        error.innerHTML = "Please enter city name";
+
+        return;
+      }
+
+      try{
+
+        const response = await fetch(url);
+
+        const data = await response.json();
+
+        console.log(data);
+
+        if(data.cod != 200){
+
+          error.innerHTML = "City not found";
+
+          return;
+        }
+
+        document.getElementById("cityName").innerHTML = data.name;
+
+        document.getElementById("temperature").innerHTML =
+        "🌡 Temperature : " + data.main.temp + " °C";
+
+        document.getElementById("humidity").innerHTML =
+        "💧 Humidity : " + data.main.humidity + "%";
+
+        document.getElementById("condition").innerHTML =
+        "☁ Weather : " + data.weather[0].main;
+
+        weatherCard.style.display = "block";
+
+      }
+
+      catch(err){
+
+        error.innerHTML = "Something went wrong";
+      }
+    }
+
+  </script>
+
+</body>
+</html>
